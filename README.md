@@ -81,6 +81,30 @@ You can save scraped data in various formats:
   scrapy crawl rumah123 -o output.xml
   ```
 
+## Example Output
+```json
+{
+  "id": "sale_id",
+  "price": "420.69",
+  "installment": "6.9",
+  "address": "xxxxxx, xxxxxx",
+  "tags": ["Rumah"],
+  "description": "xxxxxx xxxxx x xxxxx xxxxxxx\nInfo lebih lanjut, silahkan hubungi:\nXxxxx (+62xxxx)",
+  "specs": {
+    "Luas Tanah": "xx m²",
+    "Luas Bangunan": "xxx m²",
+    "bla bla": "bla bla bla"
+  },
+  "agent": {
+    "name": "rafi makasar",
+    "phone": "+62xxx"
+  },
+  "images": ["https://picture.rumah123.com/xxxxx"],
+  "url": "https://www.rumah123.com/xxxxxx",
+  "scraped_at": "xxxxxx"
+}
+```
+
 ## Troubleshooting
 
 - **Command Not Found**: Ensure the virtual environment is activated.
