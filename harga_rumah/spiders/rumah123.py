@@ -1,4 +1,3 @@
-from datetime import datetime
 from os import path
 from re import findall
 
@@ -9,7 +8,7 @@ class Rumah123Spider(Spider):
     name = "rumah123"
     allowed_domains = ["rumah123.com"]
     start_urls = [
-        f"https://www.rumah123.com/jual/cari/?q=balikpapan&page={x}"
+        f"https://www.rumah123.com/jual/balikpapan/rumah/&page={x}"
         for x in range(1, 121)
     ]
 
@@ -26,12 +25,8 @@ class Rumah123Spider(Spider):
                 "installment": self.extract_installment(response),
                 "address": self.extract_address(response),
                 "tags": self.extract_tags(response),
-                "description": self.extract_description(response),
                 "specs": self.extract_specs(response),
                 "agent": self.extract_property_agent(response),
-                "images": list(self.extract_images(response)),
-                "url": response.url,
-                "scraped_at": datetime.now().isoformat(),
             }
         else:
             # If this is a pagination page, extract property URLs and follow them
