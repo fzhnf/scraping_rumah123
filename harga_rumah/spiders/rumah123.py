@@ -8,8 +8,8 @@ class Rumah123Spider(Spider):
     name = "rumah123"
     allowed_domains = ["rumah123.com"]
     start_urls = [
-        f"https://www.rumah123.com/jual/balikpapan/rumah/&page={x}"
-        for x in range(1, 121)
+        f"https://www.rumah123.com/jual/balikpapan/rumah/?page={x}"
+        for x in range(1, 57)
     ]
 
     def is_property_page(self, url):
